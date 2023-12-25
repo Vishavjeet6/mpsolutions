@@ -1,14 +1,4 @@
-/**
-* Template Name: Butterfly
-* Updated: Sep 18 2023 with Bootstrap v5.3.2
-* Template URL: https://bootstrapmade.com/butterfly-free-bootstrap-theme/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -70,7 +60,7 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: #fff;
+  background: #031e36;
   transition: all 0.5s;
   z-index: 997;
   padding: 20px 0;
@@ -89,11 +79,11 @@ h6 {
 }
 
 #header .logo a {
-  color: #0f394c;
+  color: #f1e4e4;
 }
 
 #header .logo img {
-  max-height: 40px;
+  max-height: 35px;
 }
 
 /*--------------------------------------------------------------
@@ -127,7 +117,7 @@ h6 {
   font-family: "Dosis", sans-serif;
   font-size: 15px;
   font-weight: 600;
-  color: #0f394c;
+  color: #2f7596;
   white-space: nowrap;
   transition: 0.3s;
   text-transform: uppercase;
@@ -144,7 +134,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #49b5e7;
+  color: #51bff1;
 }
 
 .navbar .dropdown ul {
@@ -1335,11 +1325,11 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #fff;
+  background: #031e36;
   padding: 0 0 30px 0;
   color: #444444;
   font-size: 14px;
-  background: #ebf7fc;
+  /* background: #ebf7fc; */
 }
 
 #footer .footer-newsletter {
@@ -1466,6 +1456,12 @@ section {
   color: #49b5e7;
 }
 
+.footer-links img {
+  padding-bottom: 30px;
+  padding-left: 30px;
+  width: 50%;
+}
+
 #footer .footer-top .social-links a {
   font-size: 18px;
   display: inline-block;
@@ -1489,13 +1485,13 @@ section {
 
 #footer .copyright {
   float: left;
-  color: #0f394c;
+  color: #69bfe7;
 }
 
 #footer .credits {
   float: right;
   font-size: 13px;
-  color: #0f394c;
+  color: #69bfe7;
 }
 
 @media (max-width: 575px) {
