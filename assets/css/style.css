@@ -479,8 +479,8 @@ section {
 }
 
 .about .video-box {
-  background: url("../img/about.jpg") center center no-repeat;
-  background-size: cover;
+  background: url("../img/hero-img-1.png") center center no-repeat;
+  background-size: auto;
   min-height: 500px;
 }
 
@@ -615,6 +615,16 @@ section {
   font-size: 15px;
   color: #444444;
 }
+
+/*new code from here*/
+[data-purecounter-end="40000"]:after {
+  content: "+";
+}
+
+[data-purecounter-end="1000"]:after {
+  content: "+";
+}
+
 
 @media (min-width: 1200px) {
   .counts {
