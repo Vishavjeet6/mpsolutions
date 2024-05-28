@@ -265,7 +265,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form id="my-form" action="https://formspree.io/f/meqywbqo" method="POST"  class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -281,11 +281,12 @@
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
               <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <div id="l1" class="loading">Loading</div>
+                <div id="e1" class="error-message"></div>
+                <div  id="s1" class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button id="my-form-button" type="submit">Send Message</button></div>
+              <p id="my-form-status"></p>
             </form>
 
           </div>
@@ -315,11 +316,51 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>
+<!-- Place this script at the end of the body tag -->
+<script>
+  var form = document.getElementById("my-form");
+  
+  async function handleSubmit(event) {
+    event.preventDefault();
+    var loading = document.getElementById("l1");
+    var sent = document.getElementById("s1");
+    var error = document.getElementById("e1");
+    var form = document.getElementById("my-form");
+    loading.classList.add('d-block');
+    error.classList.remove('d-block');
+    sent.classList.remove('d-block');
+    var data = new FormData(event.target);
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+          'Accept': 'application/json'
+      }
+    }).then(response => {
+      loading.classList.remove('d-block');
+      if (response.ok) {
+        sent.classList.add('d-block');
+        form.reset()
+      } else {
+        throw new Error("Oops! There was a problem submitting your form");
+      }
+    }).catch(error => {
+      console.log(error);
+      displayError("Oops! There was a problem submitting your form");
+    });
+  }
 
+  function displayError(error) {
+    document.getElementById("l1").classList.remove('d-block');
+    document.getElementById("e1").innerHTML = error;
+    document.getElementById("e1").classList.add('d-block');
+  }
+
+  form.addEventListener("submit", handleSubmit)
+</script>
 </html>
